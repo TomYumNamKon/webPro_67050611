@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM & Event Lab - ระบบสั่งอาหารโรงอาหาร</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    .form-group { margin-bottom: 15px; }
+    .card { border: 1px solid #ccc; padding: 15px; border-radius: 8px; margin-top: 10px; }
+    .highlight { background-color: #fff3cd; border-color: #ffeeba; }
+    .text-danger { color: red; }
+  </style>
+</head>
+<body>
+  <h2>ระบบสั่งอาหารโรงอาหาร (Canteen Order Form)</h2>
+
+  <form id="orderForm">
+    <div class="form-group">
+      <label>ชื่อผู้สั่ง:</label>
+      <input type="text" id="custName" class="input-field" placeholder="กรอกชื่อผู้สั่ง">
+      <span id="nameError" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+      <label>หมวดอาหาร:</label>
+      <select id="menuCategory" class="input-field">
+        <option value="">-- เลือกหมวดอาหาร --</option>
+        <option value="RICE">ข้าวราด</option>
+        <option value="NOODLE">ก๋วยเตี๋ยว</option>
+        <option value="DRINK">เครื่องดื่ม</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>ระดับความเผ็ด:</label><br>
+      <input type="radio" name="spiceLevel" value="Mild" class="spice-level"> ไม่เผ็ด
+      <input type="radio" name="spiceLevel" value="Medium" class="spice-level"> เผ็ดกลาง
+      <input type="radio" name="spiceLevel" value="Hot" class="spice-level"> เผ็ดมาก
+    </div>
+
+    <div class="form-group">
+      <label>ท็อปปิ้งเพิ่มเติม (เลือกได้มากกว่า 1):</label><br>
+      <input type="checkbox" name="toppings" value="Egg"> ไข่ดาว
+      <input type="checkbox" name="toppings" value="ExtraMeat"> เนื้อเพิ่ม
+      <input type="checkbox" name="toppings" value="Veggie"> ผักเพิ่ม
+    </div>
+
+    <div class="form-group">
+      <label>รูปอ้างอิงเมนู (URL):</label>
+      <input type="text" id="menuImgUrl" placeholder="วางลิงก์รูปภาพที่นี่">
+    </div>
+
+    <button type="button" id="btnPreview">ดูตัวอย่างออเดอร์</button>
+    <button type="submit" id="btnSubmit">ยืนยันสั่งอาหาร</button>
+  </form>
+
+  <hr>
+  <h3>พื้นที่แสดงผล (Preview Area)</h3>
+  <div id="previewCard" class="card">
+    <img id="menuImg" src="https://via.placeholder.com/100" alt="Menu" width="100">
+    <h4 id="dispName">ชื่อผู้สั่ง: -</h4>
+    <p id="dispCategory">หมวดอาหาร: -</p>
+    <p id="dispToppings">ท็อปปิ้ง: -</p>
+    <div id="jsonResult"></div>
+  </div>
+
+  <!-- เขียน JavaScript ของนักศึกษาไว้ด้านล่างนี้ -->
+  <script>
+    // TODO: เขียนโค้ด JS ทั้งหมดตามโจทย์ด้านล่างที่นี่
+    const btnPreview = document.getElementById('btnPreview');
+    console.log(btnPreview);
+
+    const input_field = document.getElementsByClassName('input-field');
+    console.log(input_field);
+
+    const spiceLevel = document.querySelector('input[name=:"spiceLevel"]');
+    console.log(spiceLevel)
+  </script>
+</body>
+</html>
