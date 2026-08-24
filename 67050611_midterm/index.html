@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="HeadAll">
+        <header>Smart Event Hub</header>
+        <nav>
+            <button class="DarkMode" id="darkModeBtn"> Dark Mode </button>
+            <button id="openModalBtn"> + เพิ่มกิจกรรมใหม่ </button>
+        </nav>
+    </div>
+    
+    <div class="layout">
+        <div class="sidebar">
+            <aside id="stat" class="statsBar">
+                <h1>สถิติภาพรวม</h1>
+                <div>กิจกรรมทั้งหมด : <span id="statTotal">0</span></div>
+                <div>ลงทะเบียนแล้ว : <span id="statRegistered">0</span></div>
+                <div>ที่นั่งว่างรวม : <span id="statSeats">0</span></div>
+            </aside>
+
+            <section id="search">
+                <h1>ค้นหาและกรองข้อมูล</h1>
+                <div>
+                    <label>ค้นหากิจกรรม / วิทยากร: </label>
+                    <input type="text" id="searchInput" placeholder="พิมคำค้นหา...">
+                </div>
+                <div>
+                    <label>ประเภทกิจกรรม: </label>
+                    <select id="categoryFilter">
+                        <option value=""> ทั้งหมด (All) </option>
+                        <option value="Tech">Tech</option>
+                        <option value="Design">Design</option>
+                        <option value="Business">Business</option>
+                        <option value="General">General</option>
+                    </select>
+                </div>
+                <div>
+                    <label>เรียงลำดับตาม: </label>
+                    <select id="sortSelect">
+                        <option value="date-asc"> วันที่จัดงาน (ใกล้ → ไกล) </option>
+                        <option value="date-desc"> วันที่จัดงาน (ไกล → ใกล้) </option>
+                        <option value="seats-asc"> ที่นั่งคงเหลือ (น้อย → มาก) </option>
+                        <option value="seats-desc"> ที่นั่งคงเหลือ (มาก → น้อย) </option>
+                    </select>
+                </div>
+                <button class="resetBtn" id="resetBtn">คืนค่าข้อมูลเริ่มต้น</button>
+            </section>
+        </div>
+
+        <main>
+            <section id="activityList">
+                <h1>รายการกิจกรรม</h1>
+                <div id="cardContainer" class="cardContainer"></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modalOverlay" id="modalOverlay">
+        <section id="newActivity">
+            <div class="line">
+                <h1>เพิ่มกิจกรรมใหม่</h1>
+                <button type="button" id="closeModalBtn">X</button>
+            </div>
+            <form id="eventForm" novalidate>
+                <div>
+                    <label for="eventTitleInput">ชื่อกิจกรรม: </label>
+                    <input type="text" id="eventTitleInput" placeholder="พิมชื่อกิจกรรม...">
+                </div>
+                <div>
+                    <label for="eventCategorySelect">ประเภทกิจกรรม: </label>
+                    <select id="eventCategorySelect">
+                        <option value=""> เลือกประเภท </option>
+                        <option value="Tech">Tech</option>
+                        <option value="Design">Design</option>
+                        <option value="Business">Business</option>
+                        <option value="General">General</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="eventSpeakerInput">วิทยากร: </label>
+                    <input type="text" id="eventSpeakerInput" placeholder="พิมชื่อวิทยากร...">
+                </div>
+                <div>
+                    <label for="eventDateInput">วันที่จัดงาน: </label>
+                    <input type="date" id="eventDateInput">
+                </div>
+                <div>
+                    <label for="eventSeatsInput">จำนวนที่นั่งเปิดรับ: </label>
+                    <input type="number" id="eventSeatsInput" min="1" placeholder="พิมจำนวนที่นั่งเปิดรับ...">
+                </div>
+                <div>
+                    <label for="eventDescriptionInput">รายละเอียดกิจกรรม: </label>
+                    <input type="text" id="eventDescriptionInput" placeholder="พิมรายละเอียดกิจกรรม...">
+                </div>
+                <div id="formError" class="formError"></div>
+                <div class="formActions">
+                    <button type="button" id="cancelBtn">ยกเลิก</button>
+                    <button type="submit">บันทึกกิจกรรม</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <footer>@2026 CS Midterm Examination - Web Programming</footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
