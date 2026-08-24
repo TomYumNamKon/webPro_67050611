@@ -1,0 +1,90 @@
+body {
+    font-family: 'Kanit', 'Sarabun', 'Segoe UI', sans-serif; 
+    font-size: 16px;                                     
+    background-color: #fcf8f5;                           
+    color: #3d3d3d;                                      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+}
+
+h2 {
+    color: #4a6984; 
+    border-bottom: 4px solid #a79ad1; 
+    margin-top: 30px;
+    width: 60%;
+    margin-left: auto;  /* ดันขอบซ้ายเข้าตรงกลาง */
+    margin-right: auto; /* ดันขอบขวาเข้าตรงกลาง */
+}
+
+.profile-box {
+    background-color: #ffffff;    
+    max-width: 600px;
+    width: 100%;
+    padding: 45px;                
+    margin: 0 auto;               
+    border: 1px solid #e2e8f0;    
+    border-radius: 16px;          
+    box-shadow: 0 4px 20px rgba(74, 105, 132, 0.06); 
+    text-align: center;           
+}
+
+table {
+    margin: 25px auto 0 auto;     
+    width: 100%;
+    border-collapse: collapse;    
+    background-color: #fafbfc;
+}
+
+th, td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+}
+
+th {
+    background-color: #4a6984;    
+    color: #ffffff;
+}
+
+ul {
+    display: inline-block;        
+    text-align: left;             
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+    color: #555555;
+}
+
+img {
+    display: block;
+    margin: 25px auto;            
+    border-radius: 12px;          
+}
+
+a {
+    display: inline-block;
+    color: #4a6984;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid #cdb9ea; 
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #a79ad1;
+    border-bottom-color: #4a6984; 
+}
+
+#student-name {
+    color: #2c3e50;               
+    font-size: 2.4rem;            
+    font-weight: 700;
+    margin-bottom: 5px;           
+}
