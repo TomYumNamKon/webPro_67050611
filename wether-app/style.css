@@ -1,0 +1,387 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI Emoji', sans-serif;
+  background-color: #f3f6fa;
+  color: #1e293b;
+  padding: 30px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 580px;
+  width: 100%;
+  background: #ffffff;
+  padding: 30px 28px;
+  border-radius: 20px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.07);
+  border: 1px solid #edf2f7;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.header-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.app-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #154c79;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 13px 18px;
+  border: 1.5px solid #dce2eb;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #1e88e5;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.search-box button {
+  padding: 13px 28px;
+  background-color: #1e88e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.search-box button:hover {
+  background-color: #1565c0;
+}
+
+.search-box button:active {
+  transform: scale(0.98);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 22px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.error {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  color: #dc2626;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.weather-card {
+  background: linear-gradient(135deg, #1890ff, #0070e0);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 26px 28px;
+  margin-bottom: 26px;
+  box-shadow: 0 8px 20px rgba(24, 144, 255, 0.28);
+}
+
+.weather-main-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.weather-icon img {
+  width: 88px;
+  height: 88px;
+  display: block;
+}
+
+.temp-display h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.location-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  opacity: 0.95;
+}
+
+.weather-desc {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 12px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+}
+
+.stat-icon svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+}
+
+.stat-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.forecast-section {
+  margin-bottom: 26px;
+}
+
+.forecast-section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 14px;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.forecast-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 14px 6px;
+  text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.forecast-day {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.forecast-icon img {
+  width: 44px;
+  height: 44px;
+  display: block;
+  margin: 0 auto;
+}
+
+.forecast-temp-max {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 6px;
+}
+
+.forecast-temp-min {
+  font-size: 13px;
+  color: #2563eb;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.chart-section {
+  padding-top: 4px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.chart-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.legend-color.max {
+  background-color: #ff7640;
+}
+
+.legend-color.min {
+  background-color: #1890ff;
+}
+
+.chart-wrapper {
+  display: flex;
+  height: 160px;
+  position: relative;
+}
+
+.chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  font-size: 12px;
+  color: #64748b;
+  text-align: right;
+  padding-right: 8px;
+  height: 100%;
+}
+
+.chart-plot-area {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  border-left: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.grid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.grid-line.line-40 { top: 0; }
+.grid-line.line-30 { top: 25%; }
+.grid-line.line-20 { top: 50%; }
+.grid-line.line-10 { top: 75%; }
+.grid-line.line-0 { bottom: 0; border-top: 1px solid #cbd5e1; }
+
+.chart-columns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: flex-end;
+}
+
+.chart-column {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  gap: 4px;
+}
+
+.chart-bar {
+  width: 18px;
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: height 0.4s ease;
+}
+
+.chart-bar.max {
+  background-color: #ff7640;
+}
+
+.chart-bar.min {
+  background-color: #1890ff;
+}
+
+.chart-x-axis {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-left: 26px;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 13.5px;
+  color: #475569;
+}

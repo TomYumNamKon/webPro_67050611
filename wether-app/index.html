@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <span class="header-icon">⛅</span>
+            <h1>Weather Dashboard</h1>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="ค้นหาเมือง (เช่น Bangkok, Chiang Mai...)" autocomplete="off">
+            <button id="searchBtn">ค้นหา</button>
+        </div>
+
+        <div id="loading" class="loading-state hidden">
+            <span>⏳ กำลังโหลดข้อมูล...</span>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="weatherResult" class="hidden">
+            <div class="weather-card">
+                <div class="weather-main-info">
+                    <div class="weather-icon" id="currentWeatherIcon"></div>
+                    <div class="temp-display">
+                        <h2 id="currentTemp">32°C</h2>
+                        <p class="location-name" id="currentLocation">Bangkok, TH</p>
+                        <p class="weather-desc" id="currentDesc">ท้องฟ้าแจ่มใส</p>
+                    </div>
+                </div>
+
+                <div class="weather-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                            </svg>
+                        </span>
+                        <div class="stat-info">
+                            <span class="stat-label">ความชื้น</span>
+                            <span class="stat-value" id="currentHumidity">62%</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+                            </svg>
+                        </span>
+                        <div class="stat-info">
+                            <span class="stat-label">ความเร็วลม</span>
+                            <span class="stat-value" id="currentWind">3.6 m/s</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="13" r="8"></circle>
+                                <path d="M12 2v3"></path>
+                                <path d="M12 13l-3-3"></path>
+                            </svg>
+                        </span>
+                        <div class="stat-info">
+                            <span class="stat-label">ความกดอากาศ</span>
+                            <span class="stat-value" id="currentPressure">1008 hPa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="forecast-section">
+                <h3>พยากรณ์อากาศ 5 วัน (ตัวอย่าง)</h3>
+                <div class="forecast-grid" id="forecastGrid"></div>
+            </section>
+
+            <section class="chart-section">
+                <div class="chart-header">
+                    <h3>กราฟอุณหภูมิรายวัน</h3>
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="legend-color max"></span> สูงสุด</span>
+                        <span class="legend-item"><span class="legend-color min"></span> ต่ำสุด</span>
+                    </div>
+                </div>
+
+                <div class="chart-wrapper">
+                    <div class="chart-y-axis">
+                        <span>40</span>
+                        <span>30</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>0</span>
+                    </div>
+
+                    <div class="chart-plot-area">
+                        <div class="grid-line line-40"></div>
+                        <div class="grid-line line-30"></div>
+                        <div class="grid-line line-20"></div>
+                        <div class="grid-line line-10"></div>
+                        <div class="grid-line line-0"></div>
+
+                        <div class="chart-columns" id="chartColumns"></div>
+                    </div>
+                </div>
+
+                <div class="chart-x-axis" id="chartXAxis"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
