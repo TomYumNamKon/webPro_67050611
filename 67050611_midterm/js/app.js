@@ -1,4 +1,3 @@
-// ข้อมูลกิจกรรมเริ่มต้น
 const initialEvents = [
   { id: 1, title: "Modern JavaScript & ES6+ Workshop", category: "Tech", speaker: "Dr. Somchai Dev", date: "2026-09-15", seats: 5, description: "เจาะลึกการใช้งาน JavaScript ยุคใหม่ อธิบายเรื่อง Async/Await, Closure และ Modules", isRegistered: false },
   { id: 2, title: "UX/UI Design System Creation", category: "Design", speaker: "Aj. Ananya Design", date: "2026-09-20", seats: 0, description: "การสร้าง Design System สำหรับองค์กรขนาดใหญ่ด้วย Figma และการเชื่อมต่อกับ CSS", isRegistered: false },
@@ -14,7 +13,6 @@ let searchText = "";
 let selectedCategory = "";
 let sortBy = "date-asc";
 
-// คัดลอก object กันแก้ initialEvents โดยตรง
 function copyEvent(e) {
   return { id: e.id, title: e.title, category: e.category, speaker: e.speaker, date: e.date, seats: e.seats, description: e.description, isRegistered: e.isRegistered };
 }
@@ -130,7 +128,6 @@ function updateStats(list) {
   document.getElementById("statSeats").textContent = totalSeats;
 }
 
-// เรียกทุกครั้งที่ state เปลี่ยน
 function refresh() {
   const visibleEvents = getVisibleEvents();
   renderEvents(visibleEvents);
@@ -160,7 +157,6 @@ function closeModal() {
   document.getElementById("modalOverlay").classList.remove("show");
 }
 
-// ตรวจข้อมูลฟอร์ม คืนค่าเป็น array ของข้อความ error
 function validateEventForm(data) {
   const errors = [];
   if (!data.title) errors.push("กรุณากรอกชื่อกิจกรรม");
