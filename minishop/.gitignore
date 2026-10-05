@@ -1,4 +1,6 @@
 node_modules/
 dist/
 .pnpm-store/
+.npm-cache/
+.backups/
 *.log
